@@ -15,7 +15,9 @@
 #include "right_click.h"
 #include "game_logic.h"
 #include "make_map.h"
-#include "ui_Mineswpeer_ui.h"
+
+//"https://www.flaticon.com/kr/free-icons/"  mine productor  Freepik 
+//"https://www.flaticon.com/kr/free-icons/-" flag productor Pixel perfect
 
 class MineswpeerGui : public QMainWindow, public EventListener
 {
@@ -52,13 +54,11 @@ private:
 
 
     std::vector<QPushButton*> buttons;
-    Ui::Mineswpeer_uiClass ui;
 
     DLIST::DbLinkedList* map_list = nullptr;
     LOGIC::Logic* logic = nullptr;
 
 public:
-    //MineswpeerGui(QWidget* parent = nullptr, DLIST::DbLinkedList* map_list = nullptr);
     MAP::Map* map = nullptr;
     void onEventOccurred(int row, int column) override {
         qDebug() << "row: " << row << "column: " << column;

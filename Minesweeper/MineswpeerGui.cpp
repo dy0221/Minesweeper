@@ -4,6 +4,7 @@ MineswpeerGui::MineswpeerGui(QWidget* parent, DLIST::DbLinkedList* map_list)
     : QMainWindow(parent)
 {
     mainWindow = new QWidget(this);
+    this->setWindowIcon(QIcon(":/new/prefix1/image/mine.ico"));
     setCentralWidget(mainWindow);
     mainWindow->setStyleSheet("background-color: #E4E4E5;");
     this->setFixedSize(400, 300);
@@ -180,7 +181,7 @@ void MineswpeerGui::MakeMap() {
 void MineswpeerGui::onRightClicked()
 {
     QRightClickButton* button = qobject_cast<QRightClickButton*>(sender());
-    QString iconPath = "image\\flag.png";
+    QString iconPath = ":/new/prefix1/image/flag.png";
 
     int row = button->property("row").toInt();
     int col = button->property("col").toInt();
@@ -239,7 +240,7 @@ void MineswpeerGui::ButtonHide(QPushButton* button) {
     label->setFont(font);
 
     if (cell->IsMined()) {
-        QString iconPath = "image\\mine.png";
+        QString iconPath = ":/new/prefix1/image/mine.png";
         QPixmap iconPixmap(iconPath);
         QPixmap scaledPixmap = iconPixmap.scaled(QSize(cell_size, cell_size));
         label->setPixmap(scaledPixmap);
