@@ -154,12 +154,7 @@ void MineswpeerGui::MakeMap() {
             button->setProperty("col", col);
 
             CELL::Cell* cell = this->map_list->GetData((row - 1) * column_size + col);
-            if (cell->NumNeighborMinesCount() > 0) {
-                button->setText(QString::number(cell->NumNeighborMinesCount()));
-            }
-            if (cell->IsMined()) {
-                button->setText("M");
-            }
+
             connect(button, &QRightClickButton::rightClicked, this, &MineswpeerGui::onRightClicked);
             connect(button, &QPushButton::clicked, this, &MineswpeerGui::ButtonClicked);
 
